@@ -47,6 +47,10 @@ class Converter
 
     protected function normalize($document, $metadata = null)
     {
+        if(empty($document)) {
+            return ;
+        }
+        
         $metadata = $metadata ?? $this->propertyMetadata[get_class($document)];
         $result = [];
 
